@@ -38,9 +38,12 @@ F3::WinActivate, ahk_exe chrome.exe
 return
 
 
-; changes push to git command
+;git commands
 #IfWinActive ahk_exe WindowsTerminal.exe
 ::push::git push -u origin main
+::commit::git commit -m ""{Left}
+::add::git add .
+
 return
 
 
