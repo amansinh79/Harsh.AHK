@@ -48,7 +48,7 @@ return
 
 
 
-; gets current path of explorer if explorer is open
+;gets current path of explorer if explorer is open
 GetActiveExplorerPath() {
     explorerHwnd := WinActive("ahk_class CabinetWClass")
     if (explorerHwnd)
