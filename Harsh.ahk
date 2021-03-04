@@ -12,7 +12,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
      Run, wt -d "%ActiveExplorerPath%"
     else ; run default directory 
      Run, wt -d E:/Hell
-     Clipboard = % ActiveExplorerPath
    return
 
 
