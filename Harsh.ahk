@@ -40,9 +40,9 @@ return
 
 ;git commands
 #IfWinActive ahk_exe WindowsTerminal.exe
-::push::git push -u origin main
-::commit::git commit -m ""{Left}
-::add::git add .
+::pushf::git push -u origin main
+::commitf::git commit -m ""{Left}
+::addf::git add .
 
 return
 
