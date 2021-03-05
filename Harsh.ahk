@@ -9,18 +9,27 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 !c::Run, chrome.exe , , Max
 !F1::Run, chrome.exe stackoverflow.com, , Max
 !F2::Run, chrome.exe youtube.com, , Max
-!F3::Run, chrome.exe stackoverflow.com, , Max
+!F3::Run, chrome.exe google.com, , Max
 return
+
+#IfWinActive ahk_exe chrome.exe
+^Left::Send ^+{Tab}
+^Right::Send ^{Tab}
+return
+
+;open songs folder
+!e::Run, explorer.exe e:\edm
 
 
 ;alt+tab shortcuts
 F1::WinActivate, ahk_exe WindowsTerminal.exe
 F2::WinActivate, ahk_exe vscode.exe
 F3::WinActivate, ahk_exe chrome.exe
+F4::WinActivate, ahk_exe discord.exe
 
 
 ;Opening Terminal in current directory
-<#t::
+!t::
     ActiveExplorerPath := % Trim(GetActiveExplorerPath()) 
     if(ActiveExplorerPath) ; if explorer path exist 
      Run, wt -d "%ActiveExplorerPath%"
@@ -31,7 +40,7 @@ F3::WinActivate, ahk_exe chrome.exe
 
 ;Opening VScode in windows terminal if terminal exist
 
-<#v::
+!v::
     #IfWinExist ahk_exe WindowsTerminal.exe 
     WinActivate, ahk_exe WindowsTerminal.exe
     SendInput code .{Enter}
